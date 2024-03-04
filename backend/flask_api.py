@@ -37,7 +37,7 @@ def classify_image():
 
             result = {
                 "class": class_labels[predicted_class],
-                "confidence": float(predictions[0][predicted_class])
+                "confidence": (float(predictions[0][predicted_class])*100)
             }
 
             setofresult.append(result)
