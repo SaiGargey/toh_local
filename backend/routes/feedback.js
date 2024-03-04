@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const cors = require('cors');
-const axios = require('axios');
 const bodyParser = require('body-parser');
-const FeedbackData = require('../models/FeedbackSch');
+const FeedbackData = require('../models/FeedBackSch');
 
 router.use(bodyParser.json());
 router.use(cors({
@@ -24,9 +23,11 @@ router.post('/feedback', async (req, res) => {
     try{
         await saveData.save();
         console.log("Feedback saved successfully");
+        res.send("Feedback saved successfully");
     }
     catch(e){
         console.log("Error saving feedback: ", e);
+        res.send("Error saving feedback");
     }
 
 });
